@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a function that reads a text file"""
+"""Defines a text file-reading function."""
 
 
 def read_file(filename=""):
