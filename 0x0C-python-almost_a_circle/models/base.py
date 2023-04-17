@@ -31,8 +31,8 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Write the JSON serialization of a list of objects to a file.
-        """
+        """Write the JSON serialization of a list of objects to a file."""
+        
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
             if list_objs is None:
@@ -51,8 +51,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Return a class instantiated from a dictionary of attributes.
-        """
+        """Return a class instantiated from a dictionary of attributes."""
 
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
