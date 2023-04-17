@@ -12,8 +12,6 @@ class Base:
 
     def __init__(self, id=None):
         """Initialize a new Base.
-        Args:
-            id (int): The identity of the new Base.
         """
         if id is not None:
             self.id = id
@@ -98,7 +96,9 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """Return a list of classes instantiated from a CSV file.
+
         Reads from `<cls.__name__>.csv`.
+
         Returns:
             If the file does not exist - an empty list.
             Otherwise - a list of instantiated classes.
