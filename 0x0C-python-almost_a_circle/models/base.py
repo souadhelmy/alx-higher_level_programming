@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Write a ibase model class."""
+
 import json
 import csv
 import turtle
