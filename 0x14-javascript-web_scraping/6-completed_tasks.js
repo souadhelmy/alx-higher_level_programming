@@ -1,21 +1,16 @@
 #!/usr/bin/node
 const request = require('request');
-
-// The first argument is the API URL
-const baseURL = process.argv[2];
-request(baseURL, (error, response, body) => {
-  const aggregate = {};
-  if (error) {
-    console.log(error);
-  }
-  const json = JSON.parse(body);
-  json.forEach(element => {
-    if (element.completed) {
-      if (!aggregate[element.userId]) {
-        aggregate[element.userId] = 0;
+request(process.argv[2], function (error, response, body) {
+  if (!error) {
+    const todos = JSON.parse(body);
+    const completed = {};
+    todos.forEach((todo) => {
+      if (todo.completed && completed[todo.userId] === undefined) {
+        completed[todo.userId] = 1;
+      } else if (todo.completed) {
+        completed[todo.userId] += 1;
       }
-      aggregate[element.userId]++;
-    }
-  });
-  console.log(aggregate);
+    });
+    console.log(completed);
+  }
 });
