@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 const request = require('request');
 request(process.argv[2], function (error, response, body) {
   if (!error) {
@@ -12,6 +11,6 @@ request(process.argv[2], function (error, response, body) {
         completed[todo.userId] += 1;
       }
     });
-    console.log(JSON.stringify(completed));
+    console.log(completed);
   }
 });
