@@ -43,6 +43,5 @@ request(url, function (err, response, body) {
     console.log(completed);
   } else {
     console.log('An error occured. Status code: ' + response.statusCode);
->>>>>>> 68826bde977cb76d924847ddcc19f61b8ec4620e
   }
 });
